@@ -36,6 +36,10 @@ Open `http://localhost:8501`.
 
 ## Honest scope and limitations
 
+- **PDF support:** Upload PDFs containing selectable text. Scanned, image-only and embedded-image PDFs require OCR, which is not included.
+- **Review history:** Temporary session history for the current browser/app session only. It is not permanent storage and may clear when the session ends or the app restarts.
+- **Claim checking:** VeriBrand uses a conservative rules-based baseline with local JSON facts and lexical matching. It is not an AI fact-checker and does not establish legal or scientific truth.
+- **Human review:** The tool recommends findings and evidence states; the human reviewer makes the final approval or rejection decision.
 - The current deployed demo does **not** call a live AI model. The app's checks are deterministic Python rules and lexical matching.
 - ChatGPT may have been used as a development assistant; see `AI_USAGE_DISCLOSURE.md` and update it to match the tools actually used by the team.
 - No login or role management is included in this judge build. The shared knowledge base is read-only.

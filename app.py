@@ -222,7 +222,14 @@ st.title("🛡️ VeriBrand")
 st.caption("Proof Before Publish · Brand governance review workspace")
 st.success("Judge demo is ready — no sign-in, API key, database setup or installation is needed when using the deployed link.")
 st.warning("Fictional AquaNest demo data only. Do not upload confidential, personal, customer or company-sensitive information.")
-st.info(f"Demo organisation: {BRAND.get('organisation','Demo organisation')} · This demo uses transparent Python rules and approved-fact matching. No live AI service is required.")
+st.info(
+    f"**Scope of this demo:** {BRAND.get('organisation','Demo organisation')} · "
+    "PDF uploads support PDFs with selectable text only; scanned or image-only PDFs are not OCR-processed. "
+    "Claim checking is a conservative, rules-based baseline using approved local facts and lexical matching — "
+    "not an AI fact-checker or legal/compliance determination. "
+    "The tool recommends findings, but **a human reviewer makes the final decision**."
+)
+st.caption("Review history is temporary session history for this browser/app session, not permanent storage.")
 review, rules, history_tab = st.tabs(["① Review content", "② Approved evidence", "③ Review history"])
 
 with review:
@@ -230,7 +237,11 @@ with review:
     with col1:
         st.subheader("Submit content")
         kind = st.selectbox("Content type", ["Social media post", "Advertisement", "Email", "Document"])
-        upload = st.file_uploader("Upload a TXT, PDF or DOCX file (optional)", type=["txt", "pdf", "docx"], help="PDFs must contain selectable text. Scanned-PDF OCR will be added in a later improvement.")
+        upload = st.file_uploader(
+            "Upload a TXT, PDF or DOCX file (optional)",
+            type=["txt", "pdf", "docx"],
+            help="PDF support is for PDFs containing selectable text. Scanned or image-only PDFs are not supported because this demo does not perform OCR.",
+        )
         demo_examples = {
             "Combined demo — multiple issues": "Meet the Aqua Nest PureFlow! Our BEST purifier guarantees 100% pure water. It includes a 9-stage filtration process and removes 100% of all harmful chemicals!!!",
             "Supported claim — approved 7-stage fact": "AquaNest PureFlow includes a 7-stage filtration process.",
@@ -273,9 +284,9 @@ with review:
         st.markdown("**1.** Choose a built-in example or upload a TXT, PDF or DOCX.\n\n**2.** Click **Analyse content**.\n\n**3.** Open each finding to inspect the rule, suggested correction and Claim Passport.\n\n**4.** Choose **Approved** or **Needs changes**, enter a reviewer label and save.")
         st.divider()
         st.subheader("What makes it different?")
-        st.markdown("- **Claim Passport:** links factual claims to approved source, owner and validity date.\n- **Four evidence states:** Supported, Contradicted, Outdated and Unverified.\n- **Human decision:** the tool recommends; the reviewer decides.\n- **Brand governance:** checks terminology, product naming, prohibited claims and tone — not just grammar.")
-        st.caption("PDF extraction supports selectable text. Scanned PDFs and embedded image text require OCR, which is planned for a later version.")
-        st.warning("The tool recommends. An authorised human makes the final decision.")
+        st.markdown("- **Claim Passport:** links factual claims to approved source, owner and validity date.\n- **Four evidence states:** Supported, Contradicted, Outdated and Unverified.\n- **Claim-checking scope:** a conservative rules-based baseline, not an AI fact-checker.\n- **Human decision:** the tool recommends findings; the human reviewer makes the final decision.\n- **Brand governance:** checks terminology, product naming, prohibited claims and tone - not just grammar.")
+        st.caption("PDF support: PDFs containing selectable text. Scanned or image-only PDFs require OCR and are not supported.")
+        st.warning("The tool recommends findings. An authorised human reviewer makes the final decision.")
         st.caption("The evidence engine is a conservative lexical baseline, not a legal or scientific fact-check. Always inspect the cited source. This is a functional hackathon demo, not a production compliance system.")
     r = st.session_state.result
     if r:
