@@ -1,0 +1,16 @@
+{
+  "organisation": "AquaNest (fictional demo brand)",
+  "prohibited": [
+    {"phrase": "100% pure", "rule": "Do not make absolute purity claims.", "why": "Absolute claims require specific approved evidence and may mislead customers.", "fix": "Replace with a precise approved product benefit supported by a current source."},
+    {"phrase": "guaranteed", "rule": "Do not use an unapproved guarantee.", "why": "Guarantees must match approved legal and warranty wording.", "fix": "Remove the guarantee or use the exact approved warranty statement."}
+  ],
+  "terminology": [
+    {"avoid": "users", "use": "customers", "why": "The brand addresses people as customers."},
+    {"avoid": "water machine", "use": "water purifier", "why": "Use the approved product-category term."}
+  ],
+  "product_names": [{"wrong": "Aqua Nest Pure Flow", "right": "AquaNest PureFlow"}],
+  "facts": [
+    {"claim": "AquaNest PureFlow includes a 7-stage filtration process.", "source": "Approved product specification v1.2", "owner": "Product team", "valid_until": "2027-06-30"},
+    {"claim": "AquaNest was founded in 2018.", "source": "Approved company profile v2.0", "owner": "Corporate communications", "valid_until": "2027-12-31"}
+  ]
+}

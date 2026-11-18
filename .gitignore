@@ -1,0 +1,20 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Streamlit / environment secrets
+.streamlit/secrets.toml
+.env
+.env.*
+
+# Local review data may contain submitted content
+review_history.json
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/

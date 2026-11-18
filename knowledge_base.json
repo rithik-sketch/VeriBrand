@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "claim": "AquaNest PureFlow includes a 7-stage filtration process.",
+    "source": "Approved product specification v1.2",
+    "owner": "Product team",
+    "valid_until": "2027-06-30",
+    "status": "Approved"
+  },
+  {
+    "id": 2,
+    "claim": "AquaNest was founded in 2018.",
+    "source": "Approved company profile v2.0",
+    "owner": "Corporate communications",
+    "valid_until": "2027-12-31",
+    "status": "Approved"
+  },
+  {
+    "id": 3,
+    "claim": "AquaNest PureFlow has a 5-litre storage capacity.",
+    "source": "Approved product specification v1.3",
+    "owner": "Product team",
+    "valid_until": "2027-06-30",
+    "status": "Approved"
+  },
+  {
+    "id": 4,
+    "claim": "AquaNest PureFlow has a 2-year warranty.",
+    "source": "Old product warranty document",
+    "owner": "Product team",
+    "valid_until": "2025-12-31",
+    "status": "Approved"
+  }
+]
